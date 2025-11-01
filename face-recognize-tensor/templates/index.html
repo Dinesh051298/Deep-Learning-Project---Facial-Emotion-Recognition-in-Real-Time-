@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSL 7590</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1><i class="fas fa-brain"></i>CSL 7590: Deep Learning</h1>
+            <p>Real-time facial emotion analysis using deep learning technology</p>
+        </header>
+
+        <div class="app-container">
+            <div class="video-panel">
+                <div class="video-container">
+                    <video id="videoElement" autoplay playsinline width="640" height="480"></video>
+                    <div class="video-overlay" id="videoOverlay"></div>
+                </div>
+
+                <div class="controls">
+                    <div class="control-group">
+                        <label for="cameraSelect"><i class="fas fa-camera"></i> Camera Source</label>
+                        <select id="cameraSelect">
+                            <option value="">Loading available cameras...</option>
+                        </select>
+                    </div>
+
+                    <div class="control-group">
+                        <label for="predictionInterval"><i class="fas fa-clock"></i> Detection Speed</label>
+                        <select id="predictionInterval">
+                            <option value="300">Fast (300ms)</option>
+                            <option value="500" selected>Balanced (500ms)</option>
+                            <option value="1000">Slow (1000ms)</option>
+                        </select>
+                    </div>
+
+                    <div class="control-group">
+                        <label>&nbsp;</label>
+                        <button id="startButton" class="btn-primary">
+                            <i class="fas fa-play"></i> Start Camera
+                        </button>
+                    </div>
+                </div>
+
+                <div class="status-indicator">
+                    <div class="status-dot" id="statusDot"></div>
+                    <span id="statusText">Initializing application...</span>
+                </div>
+            </div>
+
+            <div class="results-panel">
+                <div class="emotion-display" id="emotionDisplay">
+                    <div class="emotion-label" id="emotionLabel">---</div>
+                    <div class="confidence-meter">
+                        <div class="confidence-fill" id="confidenceFill"></div>
+                    </div>
+                    <div class="confidence-text" id="confidenceText">Confidence: 0%</div>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-value" id="fpsCounter">0</div>
+                        <div class="stat-label">FPS</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="detectionCounter">0</div>
+                        <div class="stat-label">Detections</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="accuracyIndicator">0%</div>
+                        <div class="stat-label">Accuracy</div>
+                    </div>
+                </div>
+
+                <div class="emotions-section">
+                    <h3><i class="fas fa-list-alt"></i> Emotion Classification</h3>
+                    <div class="emoji-grid" id="emojiGrid">
+                        <!-- Populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>Powered by <i class="fas fa-heart"></i> Flask + TensorFlow + OpenCV</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
