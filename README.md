@@ -56,7 +56,7 @@ face-recognize-pytorch/
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/<your-username>/realtime-facial-emotion-detection.git
+git clone https://github.com/Dinesh051298/realtime-facial-emotion-detection.git
 cd "realtime-facial-emotion-detection/face-recognize-pytorch"
 ```
 
