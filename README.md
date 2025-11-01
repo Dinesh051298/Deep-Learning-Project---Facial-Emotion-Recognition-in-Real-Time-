@@ -1,4 +1,4 @@
-# Real-Time Facial Emotion Recognition using Flask and PyTorch
+# Real-Time Facial Emotion Recognition using PyTorch
 
 This repository contains a web-based real-time facial emotion recognition system built with **Flask**, **PyTorch**, and **OpenCV**.
 The application detects faces from webcam or uploaded images, classifies the detected emotions using a deep learning model, and serves predictions through a web interface or API.
